@@ -1,0 +1,25 @@
+table {
+    border: 2px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+td {
+    height: 100px;
+    width: 100px;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    text-align: center;
+}
+
+#result {
+    text-align: right;
+    height: 100px;
+}
+
+.container {}
