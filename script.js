@@ -27,6 +27,7 @@ const equals = document.querySelector(".evaluate");
 var r = resultBox.textContent;
 var sr = storedResult.textContent;
 let currOp = "";
+let equaled = false;
 
 resultBox.textContent = "0";
 storedResult.textContent = "";
@@ -73,19 +74,29 @@ function calculate() {
 
 numButtons.forEach(num => {
     num.addEventListener('click', e => {
-        if (resultBox.textContent == "0" && String(num.value) == "0") {
-            resultBox.textContent = "0";
-        } else if (resultBox.textContent.indexOf(".") > -1) {
-            r = resultBox.textContent;
+        if (equaled == true) {
+            r = '';
+            sr = '';
+            resultBox.textContent = '';
+            storedResult.textContent = '';
             r += num.value;
             resultBox.textContent = r;
+            equaled = false;
         } else {
-            if (resultBox.textContent == "0") {
-                resultBox.textContent = num.value;
-                r = num.value;
-            } else {
+            if (resultBox.textContent == "0" && String(num.value) == "0") {
+                resultBox.textContent = "0";
+            } else if (resultBox.textContent.indexOf(".") > -1) {
+                r = resultBox.textContent;
                 r += num.value;
                 resultBox.textContent = r;
+            } else {
+                if (resultBox.textContent == "0") {
+                    resultBox.textContent = num.value;
+                    r = num.value;
+                } else {
+                    r += num.value;
+                    resultBox.textContent = r;
+                }
             }
         }
     });
@@ -143,6 +154,7 @@ equals.addEventListener('click', e => {
         resultBox.textContent = calculate();
         storedResult.textContent = '';
         r = resultBox.textContent;
+        equaled = true;
         //sr = '';
     }
 })
