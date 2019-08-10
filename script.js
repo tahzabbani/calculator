@@ -104,6 +104,7 @@ numButtons.forEach(num => {
 
 operator.forEach(op => {
     op.addEventListener('click', e => {
+        equaled = false;
         currOp = op.value;
         if (storedResult.textContent == "") {
             sr = r;
@@ -122,11 +123,13 @@ operator.forEach(op => {
 });
 
 invert.addEventListener('click', e => {
+    equaled = false;
     r = resultBox.textContent * -1;
     resultBox.textContent = r;
 });
 
 dot.addEventListener('click', e => {
+    equaled = false;
     if (resultBox.textContent.indexOf(".") > -1) {
         return;
     } else {
@@ -136,11 +139,13 @@ dot.addEventListener('click', e => {
 })
 
 backspace.addEventListener('click', e => {
+    equaled = false;
     r = resultBox.textContent.slice(0, -1);
     resultBox.textContent = r;
 });
 
 clear.addEventListener('click', e => {
+    equaled = false;
     resultBox.textContent = "0";
     storedResult.textContent = "";
     sr = "";
