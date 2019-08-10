@@ -1,5 +1,5 @@
     table {
-        border: 5px solid navy;
+        border: 7px solid navy;
         margin-left: auto;
         margin-right: auto;
         margin-top: 150px;
@@ -21,7 +21,7 @@
         width: 100px;
         font-family: 'Graduate', cursive;
         background-color: black;
-        border: 1px solid white;
+        border: 3px solid white;
     }
     
     td :hover {
@@ -49,6 +49,10 @@
     
     div #display {
         background-color: lightgrey;
+    }
+    
+    .operator {
+        background-color: maroon;
     }
     
     #previous {
